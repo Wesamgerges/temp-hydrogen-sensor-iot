@@ -5,15 +5,12 @@ let data = {
     temperature2:[],
     hydrogen: []
 }
-// let dataTemp1 = [];
-// let dataTemp2 = [];
-// let dataHydrogen = [];
+
 let rowCount = 0
 let rowStart = 0
 
 let charts = {}
 
-// let chartTemp1 
 charts.temperature1 = Morris.Line({
     element: 'temperature1',
     data: data['temperature1'],
@@ -28,7 +25,7 @@ charts.temperature1 = Morris.Line({
     // pointStrokeColors: ['gray'],
     lineColors: ['red']
 });
-// let chartTemp2 
+
 charts.temperature2 = Morris.Line({
     element: 'temperature2',
     data: data['temperature2'],
@@ -43,7 +40,7 @@ charts.temperature2 = Morris.Line({
     // pointStrokeColors: ['gray'],
     lineColors: ['blue']
 });
-// let chartHydrogen 
+
 charts.hydrogen= Morris.Line({
     element: 'hydrogen',
     data: data['hydrogen'],
