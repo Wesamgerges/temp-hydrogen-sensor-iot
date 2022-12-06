@@ -19,7 +19,7 @@ charts.temperature1 = Morris.Line({
     postUnits: 'ºC',
     labels: ['Temperature1'],
     parseTime: false,
-    smooth: true,
+    pointSize: 0,
     lineColors: ['red']
 });
 
@@ -31,7 +31,7 @@ charts.temperature2 = Morris.Line({
     postUnits: 'ºC',
     labels: ['Temperature2'],
     parseTime: false,
-    smooth: true,
+    pointSize: 0,
     lineColors: ['blue']
 });
 
@@ -42,7 +42,7 @@ charts.hydrogen= Morris.Line({
     ykeys: ['a'],
     labels: ['Hydrogen'],
     parseTime: false,
-    smooth: true,
+    pointSize: 0,
     lineColors: ['green']
 });
 
@@ -54,7 +54,7 @@ charts.temp_hydrogen = Morris.Line({
     postUnits: 'ºC',
     labels: ['Temperature'],
     parseTime: false,
-    smooth: true,
+    pointSize: 0,
     lineColors: ['orange']
 });
 socket.on('sensor-data', (content) => {
