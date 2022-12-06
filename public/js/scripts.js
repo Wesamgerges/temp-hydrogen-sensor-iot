@@ -55,6 +55,21 @@ charts.hydrogen= Morris.Line({
     // pointStrokeColors: ['gray'],
     lineColors: ['green']
 });
+
+charts.temp_hydrogen = Morris.Line({
+    element: 'temp_hydrogen',
+    data: data['hydrogen'],
+    xkey: 'y',
+    ykeys: ['a'],
+    //postUnits: 'ºC',
+    labels: ['Hydrogen'],
+    //yLabelFormat: function (y) { return y.toString() + ' ºC'; },
+    parseTime: false,
+    smooth: true,
+    // pointFillColors: ['#ffffff'],
+    // pointStrokeColors: ['gray'],
+    lineColors: ['orange']
+});
 socket.on('sensor-data', (content) => {
     console.log(content)
     if (content.sensorData.sensor_type == "temperature1") {
@@ -65,6 +80,8 @@ socket.on('sensor-data', (content) => {
     }
     if (content.sensorData.sensor_type == "hydrogen_Value") {
         setDataPoint(content, "hydrogen")
+        // setDataPoint(content, "temp_hydrogen")
+        charts["temp_hydrogen"].setData(data["hydrogen"]);
     }
 });
 
