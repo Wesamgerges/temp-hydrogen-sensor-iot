@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const dweetClient = require('node-dweetio');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const moment = require('moment');
@@ -32,12 +31,17 @@ io.on('connection', (socket) => {
 
 app.post('/sensor', (request, response) => {
     const { body } = request;
-    temp1 = body.temperature1
-    temp2 = body.temperature2
-    console.log(body, temp1, temp2 );
+    console.log(body)
+    // temp1 = body.temperature1
+    // temp2 = body.temperature2
+    // hydrogen = body.hydrogen
+    sensor_type = body.sensor_type
+    value = body.value
+    datetime = body.datetime
+    console.log(body );
     const data = {
-        sensorData: { temperature1: temp1, temperature2: temp2 },
-        time: moment().format('HH:mm:ss')
+        sensorData: { sensor_type: sensor_type, value: value, datetime: datetime},
+        time: datetime //moment().format('HH:mm:ss')
     };
     io.emit('sensor-data', data);
     response.sendStatus(200);
