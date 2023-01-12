@@ -55,13 +55,17 @@ section::after {
   display: table;
   clear: both;
 }
+p{
+  font-size: 200%;
+  font-family: 'Times New Roman', Times, serif;
+}
 
 /* Style the footer */
 footer {
   background-color: #666;
   padding: 10px;
   text-align: center;
-  margin-top: 41cm;
+  margin-top: 1cm;
   color: white;
 }
    
